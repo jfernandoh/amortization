@@ -1,0 +1,62 @@
+<!-- <div class="p-inputgroup">
+        <button type="button" pButton pRipple label="Search" (click)="op.toggle($event)"></button>
+        <input type="text" pInputText placeholder="Keyword">         
+    </div> -->
+
+<p-overlayPanel #op [style]="{padding: '0px !important'}" class="asdasds">
+    <ng-template pTemplate>
+        <p-listbox [options]="cities" optionLabel="name" [style]="{'width':'15rem'}"></p-listbox>
+    </ng-template>
+</p-overlayPanel>
+
+<div class="board_content">
+    <p-table [value]="dataAmortization" [scrollable]="true" scrollHeight="calc(100vh - 16px)">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th style="max-width:60px">N°</th> -->
+                <th>Saldo Inicial</th>
+                <th>Cuota</th>
+                <th>Interes</th>
+                <th>Pago Capital</th>
+                <th>Saldo Final</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-element>
+            <tr>
+                <!-- <td style="max-width:60px">
+                    {{element.number}}
+                </td> -->
+                <td>
+                    {{element.initialBalance | number:'1.2-2'}}
+                </td>
+                <td>
+                    {{element.quota | number:'1.2-2'}}
+                </td>
+                <td>
+                    {{element.interests | number:'1.2-2'}}
+                </td>
+                <td (click)="showModalDialog()">
+                    {{element.capitalPayment | number:'1.2-2'}}
+                </td>
+                <td>
+                    {{element.finalBalance | number:'1.2-2'}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+</div>
+
+
+<!-- <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog> -->

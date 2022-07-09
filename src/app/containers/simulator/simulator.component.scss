@@ -1,0 +1,64 @@
+:host {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.simulator {
+    width: 85%;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.simulador_input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.simulator_group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.footer_group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    margin-top: 2.5rem;
+
+    & button {
+        width: 100%;
+    }
+}
+
+.result {
+    width: 85%;
+    margin-top: 2.5rem;
+    background-color: #eceded;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+}
+
+.result p {
+    margin: 0px;
+    letter-spacing: -0.5px;
+}
+
+.result_title {
+    font-size: 24px;
+}
+
+.result_quota {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--blue-500);
+}

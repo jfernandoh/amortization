@@ -1,0 +1,47 @@
+<div class="simulator">
+    <form [formGroup]="formGroup" (ngSubmit)="calculate()" (keydown.enter)="calculate()" autocomplete="off">
+        <div class="simulador_input">
+
+            <div class="simulator_group">
+                <div>Monto</div>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">S/</span>
+                    <input formControlName="amount" type="text" placeholder="0" inputmode="numeric" pInputText
+                        [imask]="imaskAmount">
+                </div>
+            </div>
+
+            <div class="simulator_group">
+                <div>Tiempo (Meses)</div>
+
+                <p-inputNumber formControlName="time" [style]="{width: '100%'}" [inputStyle]="{width: '100%'}"
+                    [showButtons]="true" [useGrouping]="false" buttonLayout="horizontal" inputId="horizontal"
+                    spinnerMode="horizontal" inputmode="numeric" incrementButtonIcon="pi pi-plus"
+                    decrementButtonIcon="pi pi-minus" placeholder="0" mode="decimal" [min]="0" [max]="1000">
+                </p-inputNumber>
+            </div>
+
+            <div class="simulator_group">
+                <div>Tasa</div>
+
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">%</span>
+                    <input formControlName="rate" type="text" placeholder="0" inputmode="numeric" pInputText
+                        [imask]="imaskInitial">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_group">
+            <button pButton pRipple type="submit" label="Calcular" [disabled]="formGroup.invalid" ></button>
+
+            <button pButton pRipple type="button" label="Tabla Amortización" [disabled]="formGroup.invalid"
+                class="p-button-success" (click)="amortizationTable()"></button>
+        </div>
+    </form>
+</div>
+
+<div class="result" *ngIf="quotaValue">
+    <p class="result_title">La cuota aproximada es:</p>
+    <p class="result_quota">{{ quotaValue | currency:'S/' }}</p>
+</div>
