@@ -22,7 +22,6 @@ export class SimulatorComponent implements OnInit {
         this.imaskInitial = maskConfigInitial;
 
         const simulation = this.amortizationService.simulationValue;
-        console.log(simulation);
         this.formGroup = new FormGroup({
             amount: new FormControl(simulation?.amount || null, Validators.required),
             time: new FormControl(simulation?.time || null, Validators.required),

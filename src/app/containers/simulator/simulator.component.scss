@@ -2,9 +2,15 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     height: 100%;
     width: 100%;
+    // padding: 5rem 0px;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: bold;
 }
 
 .simulator {
